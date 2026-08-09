@@ -1,0 +1,18 @@
+{
+  "name": "loop-foundry",
+  "version": "0.2.0",
+  "description": "Turn repeated work into portable AI skills, evaluations, and safe automation recipes.",
+  "author": {
+    "name": "shineonyou1274"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Loop Foundry",
+    "shortDescription": "Forge repeated work into reusable AI skills.",
+    "longDescription": "Loop Foundry interviews users, separates training and heldout examples, defines acceptance criteria, improves a workflow through evidence, and produces a safe automation recipe without requiring a separate API key or web service.",
+    "developerName": "shineonyou1274",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Interview me and turn my repeated work into a reusable skill and safe automation recipe."
+  }
+}
