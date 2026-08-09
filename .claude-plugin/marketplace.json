@@ -1,0 +1,19 @@
+{
+  "name": "loop-foundry",
+  "description": "Portable loop-engineering skills for turning repeated work into reusable workflows.",
+  "owner": {
+    "name": "shineonyou1274"
+  },
+  "plugins": [
+    {
+      "name": "loop-foundry",
+      "source": {
+        "source": "github",
+        "repo": "shineonyou1274/loop-foundry"
+      },
+      "description": "Turn repeated work into portable AI skills, evaluations, and safe automation recipes.",
+      "category": "productivity",
+      "tags": ["workflow", "automation", "agent-skills", "evaluation"]
+    }
+  ]
+}
