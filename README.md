@@ -4,6 +4,8 @@
 
 하나의 `skills/loop-foundry/SKILL.md`를 Codex, Claude Code, Google Antigravity가 함께 사용합니다. 별도 API 키, Python, 웹서버가 필요하지 않습니다.
 
+> **복사 버튼으로 설치하기:** [Loop Foundry 설치 페이지](https://shineonyou1274.github.io/loop-foundry/)
+
 ## 지원 환경
 
 | 환경 | 설치 방식 | 실행 방법 |
