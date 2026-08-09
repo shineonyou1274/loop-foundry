@@ -1,0 +1,11 @@
+name: ""
+enabled: false
+trigger: ""
+schedule_suggestion: "수동"
+inputs: []
+workflow: []
+guards: []
+approval_required_before: []
+completion: []
+failure_policy: "검증 실패 시 변경을 중단하고 근거만 보고한다."
+

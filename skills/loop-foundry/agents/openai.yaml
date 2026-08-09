@@ -1,0 +1,6 @@
+interface:
+  display_name: "Loop Foundry"
+  short_description: "반복 업무에서 나만의 스킬과 자동화 규칙을 만듭니다"
+  default_prompt: "Use $loop-foundry to interview me and turn my repeated work into a reusable skill, evaluation set, and safe automation recipe."
+policy:
+  allow_implicit_invocation: true
