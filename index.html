@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Loop Foundry 설치 문장을 한 번에 복사하세요.">
+  <title>Loop Foundry 설치</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f5f3ee;
+      --surface: #fffdf8;
+      --ink: #20201d;
+      --muted: #68675f;
+      --line: #dcd7cb;
+      --accent: #d6532f;
+      --accent-hover: #b93f21;
+      --code: #282724;
+      --code-ink: #faf5e9;
+      --shadow: 0 16px 44px rgb(45 39 29 / 8%);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 10% 0%, rgb(214 83 47 / 12%), transparent 30rem),
+        var(--background);
+      color: var(--ink);
+      font-family: Pretendard, "Noto Sans KR", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0 80px;
+    }
+
+    header { margin-bottom: 36px; }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5.4rem);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    article {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    article:first-child { grid-column: 1 / -1; }
+
+    h2 {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+      letter-spacing: -.02em;
+    }
+
+    article p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .snippet {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--code);
+    }
+
+    pre {
+      min-height: 118px;
+      margin: 0;
+      padding: 20px 18px 62px;
+      overflow-x: auto;
+      color: var(--code-ink);
+      font: 500 .9rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    button {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      min-width: 92px;
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: var(--accent);
+      color: white;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .15s ease, transform .15s ease;
+    }
+
+    button:hover { background: var(--accent-hover); }
+    button:active { transform: translateY(1px); }
+    button:focus-visible { outline: 3px solid #ffb59f; outline-offset: 3px; }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    a { color: inherit; text-underline-offset: 3px; }
+
+    #status {
+      position: fixed;
+      left: 50%;
+      bottom: 20px;
+      z-index: 10;
+      transform: translate(-50%, 150%);
+      border-radius: 999px;
+      padding: 10px 16px;
+      background: var(--ink);
+      color: white;
+      opacity: 0;
+      transition: .2s ease;
+    }
+
+    #status.visible { transform: translate(-50%, 0); opacity: 1; }
+
+    @media (max-width: 700px) {
+      main { padding-top: 46px; }
+      .grid { grid-template-columns: 1fr; }
+      article:first-child { grid-column: auto; }
+      article { padding: 20px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Copy · Paste · Start</p>
+      <h1>Loop Foundry</h1>
+      <p class="intro">사용 중인 AI를 고르고 버튼을 누르세요. 복사된 문장을 새 대화에 붙여넣으면 API 키나 Python 없이 설치를 시작합니다.</p>
+    </header>
+
+    <section class="grid" aria-label="플랫폼별 설치 문장">
+      <article>
+        <h2>Codex</h2>
+        <p>Codex에 아래 문장 하나를 붙여넣습니다.</p>
+        <div class="snippet">
+          <pre><code id="codex">$skill-installer를 사용해서 다음 스킬을 설치해줘:
+https://github.com/shineonyou1274/loop-foundry/tree/main/skills/loop-foundry</code></pre>
+          <button type="button" data-copy="codex">문장 복사</button>
+        </div>
+      </article>
+
+      <article>
+        <h2>Claude Code</h2>
+        <p>Claude Code에 두 명령을 순서대로 실행해 달라고 요청합니다.</p>
+        <div class="snippet">
+          <pre><code id="claude">다음 Claude Code 명령을 순서대로 실행해서 Loop Foundry를 설치해줘.
+
+/plugin marketplace add shineonyou1274/loop-foundry
+/plugin install loop-foundry@loop-foundry
+
+설치 후 새 세션에서 loop-foundry 스킬을 사용할 수 있다고 알려줘.</code></pre>
+          <button type="button" data-copy="claude">문장 복사</button>
+        </div>
+      </article>
+
+      <article>
+        <h2>Google Antigravity</h2>
+        <p>현재 워크스페이스에 플러그인으로 설치합니다.</p>
+        <div class="snippet">
+          <pre><code id="antigravity">다음 저장소를 clone해서 현재 워크스페이스의 .agents/plugins/loop-foundry 경로에 플러그인으로 설치해줘. 필요한 상위 폴더가 없으면 만들고 기존 파일은 임의로 덮어쓰지 마.
+
+https://github.com/shineonyou1274/loop-foundry</code></pre>
+          <button type="button" data-copy="antigravity">문장 복사</button>
+        </div>
+      </article>
+
+      <article>
+        <h2>다른 코딩 에이전트</h2>
+        <p>저장소와 파일을 읽을 수 있는 AI에서 사용합니다.</p>
+        <div class="snippet">
+          <pre><code id="universal">https://github.com/shineonyou1274/loop-foundry 저장소를 clone하고 skills/loop-foundry/SKILL.md와 그 파일이 직접 연결한 references를 읽어줘. 그 지침에 따라 내 반복 업무를 인터뷰해서 재사용 가능한 스킬과 자동화 규칙으로 만들어줘. 별도 API 키, Python, 웹서버는 요구하지 마.</code></pre>
+          <button type="button" data-copy="universal">문장 복사</button>
+        </div>
+      </article>
+    </section>
+
+    <footer>
+      <span>설치 후 “내 반복 업무를 스킬로 만들어줘”라고 시작하세요.</span>
+      <a href="https://github.com/shineonyou1274/loop-foundry">GitHub 저장소 보기</a>
+    </footer>
+  </main>
+
+  <div id="status" role="status" aria-live="polite">클립보드에 복사했습니다.</div>
+
+  <script>
+    const status = document.querySelector('#status');
+    let statusTimer;
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+    }
+
+    document.querySelectorAll('[data-copy]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const source = document.getElementById(button.dataset.copy);
+        try {
+          await copyText(source.textContent.trim());
+          const original = button.textContent;
+          button.textContent = '복사됨';
+          status.classList.add('visible');
+          clearTimeout(statusTimer);
+          statusTimer = setTimeout(() => status.classList.remove('visible'), 1800);
+          setTimeout(() => { button.textContent = original; }, 1400);
+        } catch {
+          status.textContent = '복사하지 못했습니다. 문장을 직접 선택해 주세요.';
+          status.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
